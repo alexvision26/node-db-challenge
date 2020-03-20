@@ -10,4 +10,25 @@ router.get("/", (req, res) => {
     .catch(err => res.status(500).json({ message: "server error" }));
 });
 
+router.post("/", (req, res) => {
+  const projectData = req.body;
+
+  db.addProject(projectData)
+    .then(project => {
+      res.status(201).json(project);
+    })
+    .catch(err => res.status(500).json({ message: "server error" }));
+});
+
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+  db.getProjectById(id).then(project => {
+    if (project) {
+      res.status(200).json(project);
+    } else {
+      res.status(404).json({ message: "project not found" });
+    }
+  });
+});
+
 module.exports = router;
