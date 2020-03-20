@@ -10,6 +10,14 @@ router.get("/", (req, res) => {
     .catch(err => res.status(500).json({ message: "server error" }));
 });
 
+router.get("/all", (req, res) => {
+  db.getAllProjects()
+    .then(projects => {
+      res.status(200).json(projects);
+    })
+    .catch(err => res.status(500).json({ message: "Error" }));
+});
+
 router.post("/", (req, res) => {
   const projectData = req.body;
 

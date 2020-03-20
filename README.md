@@ -40,11 +40,20 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+Relational Databases are database management software itself. SQL is what your use to
+"communicate" or query the database. SQL is a language that works with Relational Databases.
+
 - [ ] Why do tables need a `primary key`?
+
+Tables use primary key to create unique identifiers for each entry/row. That way, you can query a specific row based on the unique key or use it to reference to other, related data on another table.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+The name given to a table column that references the primary key of another table is called a foreign key. Foreign keys are used to create unique keys between related data of seperate but Relational tables.
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+In order to use a many to many relationship of two tables, you would need to add a third table to connect the two, a 'middle-man' of sorts. This table references the foreign keys of the two many to many relationship tables and gives them unique identifiers through the combination of the two foreign keys.
 
 ## Minimum Viable Product
 
